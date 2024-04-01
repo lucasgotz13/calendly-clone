@@ -39,6 +39,7 @@ export default function ButtonContainer() {
           onClick: () => console.log("Close")
         }
       })
+      return router.push("/meeting-booked")
     } catch (error) {
       console.error(error);
     }
