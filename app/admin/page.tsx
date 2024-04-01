@@ -3,14 +3,16 @@ import connectDB from "@/utils/mongoose";
 import { Meeting } from "@/lib/types";
 import { Dashboard } from "@/components/Dashboard";
 
+export const revalidate = 10;
+
 const loadMeetings = async () => {
-  connectDB();
-  const meetings: Meeting[] = await meetingModel.find().lean();
-  return meetings;
+    connectDB();
+    const meetings: Meeting[] = await meetingModel.find().lean();
+    return meetings;
 };
 
 export default async function Home() {
-  const meetings = await loadMeetings();
+    const meetings = await loadMeetings();
 
-  return <Dashboard meetings={meetings} />;
+    return <Dashboard meetings={meetings} />;
 }
