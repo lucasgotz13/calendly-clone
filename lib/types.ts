@@ -5,6 +5,7 @@ export interface Meeting {
     name: string;
     email: string;
     subject: string;
+    time: string;
     date: Date;
     __v: 0;
 }

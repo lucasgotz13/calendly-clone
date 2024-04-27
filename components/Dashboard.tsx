@@ -49,8 +49,8 @@ export function Dashboard({ meetings }: { meetings: Meeting[] }) {
     };
 
     const handleLogout = () => {
-        Cookies.remove("token")
-    }
+        Cookies.remove("token");
+    };
 
     useEffect(() => {
         const token = Cookies.get("token");
@@ -103,7 +103,9 @@ export function Dashboard({ meetings }: { meetings: Meeting[] }) {
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="end">
                             <DropdownMenuItem className="cursor-pointer">
-                                <Link href={"/"} onClick={() => handleLogout()}>Logout</Link>
+                                <Link href={"/"} onClick={() => handleLogout()}>
+                                    Logout
+                                </Link>
                             </DropdownMenuItem>
                         </DropdownMenuContent>
                     </DropdownMenu>
@@ -135,6 +137,7 @@ export function Dashboard({ meetings }: { meetings: Meeting[] }) {
                                                 Subject
                                             </TableHead>
                                             <TableHead>Meeting Date</TableHead>
+                                            <TableHead>Meeting Time</TableHead>
                                             <TableHead>
                                                 <span className="sr-only">
                                                     Actions
@@ -158,6 +161,9 @@ export function Dashboard({ meetings }: { meetings: Meeting[] }) {
                                                     {meeting.date.toLocaleDateString(
                                                         "es-ar"
                                                     )}
+                                                </TableCell>
+                                                <TableCell>
+                                                    {meeting.time}
                                                 </TableCell>
                                                 <TableCell>
                                                     <DropdownMenu>

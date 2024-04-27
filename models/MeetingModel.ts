@@ -14,6 +14,10 @@ const MeetingSchema = new Schema({
         type: String,
         required: [true, "Please provide a subject"],
     },
+    time: {
+        type: String,
+        required: [true, "Please provide a time"],
+    },
     date: {
         type: Date,
         required: [true, "Please provide a date"],
